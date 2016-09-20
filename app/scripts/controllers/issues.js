@@ -9,11 +9,12 @@
  */
 angular.module('dashboardApp')
 	.controller('IssuesCtrl', ['$scope', function ($scope) {
-		(function poll(){
+		(function pollIssue(){
+			setTimeout(function(){
 			$.ajax({
 				url: "../data/Issue_DATA.json",
 				dataType: "json",
-				async: false,
+				async: true,
 				success: function(response){
 					var map = new google.visualization.DataTable();
 					$('#table-div').empty();
@@ -51,14 +52,14 @@ angular.module('dashboardApp')
 							}
 						}
 					});
-					google.visualization.events.addListener(control, 'ready', function(){
-						
-					});
 					table.bind(control, msgTable);
 					table.draw(map);
 				},
-				complete: poll,
-				timeout: 60000
+				complete: function(){
+					pollIssue();
+				},
+				timeout: 10000
 			});
+			},10000);
 		})();
 	}]);
