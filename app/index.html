@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="styles/bootstrap.css" />
     <link rel="stylesheet" href="styles/main.css">
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="scripts/lib/loader.js"></script>
 	<script type="text/javascript">
-		google.charts.load('current', {'packages': ['corechart', 'geochart', 'bar', 'table', 'controls']});
+		google.charts.load('current', {'packages': ['table', 'controls']});
 		google.setOnLoadCallback(function() {
-			angular.bootstrap(document.body, ['dashboardApp']);
+			angular.bootstrap(document.body, ["dashboardApp", "highcharts-ng"]);
 		});
 	</script>
   </head>
@@ -62,7 +62,13 @@
     <script src="scripts/lib/angular.js"></script>
     <script src="scripts/lib/bootstrap.js"></script>
 	<script src="scripts/lib/angular-ui-router.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+	<script src="scripts/lib/jquery-csv.js"></script>
+	<script src="scripts/lib/highcharts-ng.js"></script>
+	<script src="scripts/lib/highcharts.js"></script>
+	<script src="scripts/lib/highcharts-more.js"></script>
+	<script src="scripts/lib/map.js"></script>
+	<script src="scripts/lib/data.js"></script>
+	<script src="scripts/lib/world.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
 	<script src="scripts/controllers/employee.js"></script>

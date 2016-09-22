@@ -8,9 +8,9 @@
  * Controller of the dashboardApp
  */
 angular.module('dashboardApp')
-	.controller('IssuesCtrl', ['$scope', function ($scope) {
-		(function pollIssue(){
-			setTimeout(function(){
+	.controller('IssuesCtrl', ['$scope', '$interval', function ($scope, $interval) {
+		var stop;
+		var refreshIssueData = function(){
 			$.ajax({
 				url: "../data/Issue_DATA.json",
 				dataType: "json",
@@ -55,11 +55,15 @@ angular.module('dashboardApp')
 					table.bind(control, msgTable);
 					table.draw(map);
 				},
-				complete: function(){
-					pollIssue();
-				},
-				timeout: 10000
 			});
-			},10000);
-		})();
+		}
+		refreshIssueData();
+		stop = $interval(refreshIssueData, 10000);
+		$scope.$on('$destroy', function() {
+			// Make sure that the interval is destroyed too
+			if (angular.isDefined(stop)) {
+				$interval.cancel(stop);
+				stop = undefined;
+			}
+		});
 	}]);
