@@ -10,7 +10,8 @@ var jsonminify = require('gulp-jsonminify');
 var gulp = require('gulp');
 var fontmin = require('gulp-fontmin');
 var copy = require('gulp-copy');
-
+var useref = require('gulp-useref');
+var gulpIf = require('gulp-if');
 gulp.task('fontmn', function () {
     return gulp.src('app/fonts/*.ttf')
         .pipe(fontmin({
@@ -32,7 +33,7 @@ gulp.task('serve', [], function(){
 	browserSync.stream();
 });
 
-gulp.task('default',['compress', 'compcss', 'comphtml', 'comphtm', 'compimg', 'jsonmin', 'serve', 'copy', 'fontmn', 'fontmn1'], function() {
+gulp.task('default',['useref', 'compcss', 'comphtml', 'comphtm', 'compimg', 'jsonmin', 'serve', 'copy', 'fontmn', 'fontmn1'], function() {
 	gulp.watch('app/scripts/**/*.js', ['lint']);
 });
 
@@ -53,10 +54,12 @@ gulp.task('lint', function () {
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('compress', function(){
-	return gulp.src(['app/scripts/**/*.js'])
-	.pipe(uglify())
-	.pipe(gulp.dest('dist/scripts'));
+gulp.task('useref', function(){
+  return gulp.src('app/*.html')
+    .pipe(useref())
+    // Minifies only if it's a JavaScript file
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('dist'))
 });
 gulp.task('compcss', function () {
 	gulp.src('app/styles/**/*.css')

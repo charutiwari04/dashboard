@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/bootstrap.css" />
     <link rel="stylesheet" href="styles/main.css">
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	<script type="text/javascript" src="scripts/lib/loader.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
 		google.charts.load('current', {'packages': ['table', 'controls']});
 		google.setOnLoadCallback(function() {
@@ -57,23 +57,23 @@
         <p><span class="glyphicon glyphicon-dashboard"></span> from the Dashboard team</p>
       </div>
     </div>
-	
-	<script src="scripts/lib/jquery.js"></script>
-    <script src="scripts/lib/angular.js"></script>
-    <script src="scripts/lib/bootstrap.js"></script>
-	<script src="scripts/lib/angular-ui-router.js"></script>
-	<script src="scripts/lib/jquery-csv.js"></script>
-	<script src="scripts/lib/highcharts-ng.js"></script>
-	<script src="scripts/lib/highcharts.js"></script>
-	<script src="scripts/lib/highcharts-more.js"></script>
-	<script src="scripts/lib/map.js"></script>
-	<script src="scripts/lib/data.js"></script>
-	<script src="scripts/lib/world.js"></script>
+	<!--build:js scripts/bundle.js -->
+	<script src="scripts/jquery.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+	<script src="scripts/angular-ui-router.js"></script>
+	<script src="scripts/jquery-csv.js"></script>
+	<script src="scripts/highcharts-ng.js"></script>
+	<script src="scripts/highcharts.js"></script>
+	<script src="scripts/highcharts-more.js"></script>
+	<script src="scripts/map.js"></script>
+	<script src="scripts/data.js"></script>
+	<script src="scripts/world.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-	<script src="scripts/controllers/employee.js"></script>
-	<script src="scripts/controllers/metrics.js"></script>
-	<script src="scripts/controllers/issues.js"></script>
-	
+    <script src="scripts/main.js"></script>
+	<script src="scripts/employee.js"></script>
+	<script src="scripts/metrics.js"></script>
+	<script src="scripts/issues.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

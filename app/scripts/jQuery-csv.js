@@ -1,19 +1,3 @@
-/*Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @charutiwari04
- Watch 10
-  Star 130
-  Fork 75 evanplaice/jquery-csv
- Code  Issues 12  Pull requests 1  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathjquery-csv/src/jquery.csv.js
-9e81c8d  on Jan 25
-@evanplaice evanplaice Remove the version field from jquery.csv.js
-3 contributors @evanplaice @mirlord @IshitaJain
-RawBlameHistory     976 lines (872 sloc)  31.2 KB
 /**
  * jQuery-csv (jQuery Plugin)
  *
@@ -988,5 +972,3 @@ RegExp.escape= function(s) {
   }
 
 }).call( this );
-//Contact GitHub API Training Shop Blog About
-//© 2016 GitHub, Inc. Terms Privacy Security Status Help
