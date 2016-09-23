@@ -33,7 +33,7 @@ gulp.task('serve', [], function(){
 	browserSync.stream();
 });
 
-gulp.task('default',['useref', 'compcss', 'comphtml', 'comphtm', 'compimg', 'jsonmin', 'serve', 'copy', 'fontmn', 'fontmn1'], function() {
+gulp.task('default',['useref', 'compcss', 'comphtm', 'compimg', 'jsonmin', 'serve', 'copy', 'fontmn', 'fontmn1'], function() {
 	gulp.watch('app/scripts/**/*.js', ['lint']);
 });
 
@@ -65,11 +65,6 @@ gulp.task('compcss', function () {
 	gulp.src('app/styles/**/*.css')
 		.pipe(cssmin())
 		.pipe(gulp.dest('dist/styles'));
-});
-gulp.task('comphtml', function(){
-	return gulp.src('app/*.html')
-		.pipe(htmlmin({collapseWhitespace: true}))
-		.pipe(gulp.dest('dist'))
 });
 gulp.task('comphtm', function(){
 	return gulp.src('app/views/*.html')
