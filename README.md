@@ -34,7 +34,7 @@ App is built in Gulp.
 1. After following above steps from 1 through 5. Run command gulp serve:dist
 
 ##Skills used
-HTML, CSS, Bootstrap, jQuery, AngularJS, Google Charts and gulp.
+HTML, CSS, Bootstrap, jQuery, AngularJS, Google Charts, Highcharts and gulp.
 
 ###Note: 
 Improvements will be done in future.
